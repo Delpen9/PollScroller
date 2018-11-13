@@ -1,0 +1,175 @@
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.wrapper > .pollWrapper {
+  margin-right: 0.5208333333333334vw; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 91.14583333333334vw; /* 2 */
+
+  padding-right: 0.5208333333333334vw; /* 3 */
+  padding-left:  0.5208333333333334vw; /* 3 */
+}
+
+.text {
+  font-size: 2vw;
+  position: absolute;
+  top: 2vw;
+  left: 5vw;
+}
+
+.textButton {
+  font-size: 2vw;
+  position: absolute;
+  top: 0vw;
+  right: 0.5vw;
+}
+
+.textPollDescription {
+  font-size: 2vw;
+  position: absolute;
+  top: 0vw;
+  right: -0.5vw;
+}
+
+.clickToScroll {
+  font-size: 7vw;
+  position: absolute;
+  color: solid rgb(255, 255, 255);
+}
+
+.voteScroll {
+  height: 25vw;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.voteScroll > .voteItem {
+  width: 20.83333vw;
+  height: 18.22917vw;
+  display: inline-block;
+  position:  relative;
+
+  margin-top: 0.52083vw;
+  margin-bottom: 0.52083vw;
+  margin-left: 1.30208vw;
+  margin-right: 1.30208vw;
+
+  border: 1px solid rgb(80, 80, 80, .3);
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+
+  box-shadow: 4px 4px 4px rgb(80, 80, 80);
+}
+
+.innerButton {
+  position: absolute;
+  width: 6vw;
+  height: 2.604166666666667vw;
+  bottom: 1.30208vw;
+  right: 7.3vw;
+}
+
+.scrollAside {
+  height: 19.53125vw;
+  background-color: rgb(0, 0, 0, 0.05);
+  border-radius: 2%;
+  position: relative;
+  right: 6.927083333333334vw;
+}
+
+.scrollAside i {
+  font-size: 4.6875vw;
+  margin-top: 6.770833333333334vw;
+  color: rgb(0, 0, 0, 0.05);
+}
+
+.scrollAside:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.scrollAside:hover i {
+  color: rgb(0, 0, 0, 0.3);
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}
+
+.growIcon:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0.10416666666666667vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px;
+    background-clip: content-box;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+.diagonal {
+  position: relative;
+  overflow: hidden;
+}
+.diagonal:after {
+  content: '';
+  background: black;
+  width: 300%;
+  height: 200%;
+  position: absolute;
+  left: 10vw;
+  top: 2.604166666666667vw;
+  transform: rotate(-40deg);
+  transition: all 0.4s ease-in;
+  z-index: -1;
+}
+.diagonal:hover:after {
+  left: -30vw;
+}
+
+.wordWrapping {
+  width: 15.625vw;
+  height: auto;
+  color: rgb(255, 255, 255);
+  white-space: pre-wrap;
+  z-index: 25;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pointerDisabled {
+  pointer-events: none;
+}

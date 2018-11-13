@@ -1,0 +1,170 @@
+<!-- ******************************************************************************************************
+Structural elements specific to home page
+****************************************************************************************************** -->
+
+<div id="wrapper" class="wrapper">
+  <div class="row d-flex text-center">
+    <div class="col-md-12 text-left" style="height: 150px; background-color: rgb(20, 20, 20);">
+        <h1 class="pl-5 pt-4 ml-3 mt-4" style="color: rgb(230, 230, 230);">
+          <i class="fa fa-home growIcon">
+          </i>
+          Home
+        </h1>
+    </div>
+  </div>
+
+  <div class="row d-flex text-center">
+    <div class="col-md-12 text-center" style="height: 50px; background-color: rgb(230, 230, 230);">
+    </div>
+  </div>
+
+  <!-- ******************************************************************************************************
+  Content Specific to the Home Page
+  ****************************************************************************************************** -->
+
+  <div class="pollWrapper">
+
+    <!-- ******************************************************************************************************
+    Viewing new polls
+    ****************************************************************************************************** -->
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-left" style="height: 5.208333333333334vw; background-color: rgb(255, 255, 255);">
+          <h2 class="pl-5 pt-4 mt-3 ml-3">
+            <strong class="text"  [ngStyle]="textSize">
+              <i class="fa fa-upload"></i>
+              New Polls
+            </strong>
+          </h2>
+      </div>
+    </div>
+
+    <div class="row d-flex text-center noSelect">
+      <div class="voteScroll col-md-11" id="new-polls" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}" dragScroll>
+        <div class="voteItem grow diagonal"
+        (dblclick)="onPollClick()"
+        *ngFor="let newpoll of newPolls; let i = index;"
+        (mouseenter)="hoverDescriptionNewPollSet(i)"
+        (mouseleave)="hoverDescriptionNewPollRemove(i)"
+        id="{{ newPolls[i].id }}">
+            <div class="ml-5 pl-3 mt-5 text-center wordWrapping">
+              <h2 *ngIf="newPollDescription[i] === true" class="pt-1 textPollDescription">{{ newPolls[i].description }}</h2>
+            </div>
+            <button class="btn btn-secondary innerButton" (click)="onPollClick()"><h3 class="textButton">Open</h3></button>
+        </div>
+      </div>
+
+      <div class="col-md-1 scrollAside" (click)="scroll('new-polls')" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}" style="position: static;">
+        <i *ngIf="!showText" class="fa fa-angle-right"></i>
+        <p *ngIf="showText" class="clickToScroll">
+          Click to Scroll Right
+        </p>
+      </div>
+    </div>
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-center" style="height: 2.34375vw; background-color: rgb(255, 255, 255);">
+      </div>
+    </div>
+
+    <!-- ******************************************************************************************************
+    Viewing watched polls
+    ****************************************************************************************************** -->
+
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-left" style="height: 5.208333333333334vw; background-color: rgb(255, 255, 255);">
+          <h2 class="pl-5 pt-4 mt-3 ml-3">
+            <strong class="text" [ngStyle]="textSize">
+              <i class="fa fa-eye"></i>
+              Watched Polls
+            </strong>
+          </h2>
+      </div>
+    </div>
+
+    <div class="row d-flex text-center noSelect">
+      <div class="voteScroll col-md-11" id="watched-polls" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}" dragScroll>
+        <div class="voteItem grow diagonal"
+        (dblclick)="onPollClick()"
+        *ngFor="let watchedpoll of watchedPolls; let i = index;"
+        (mouseenter)="hoverDescriptionWatchedPollSet(i)"
+        (mouseleave)="hoverDescriptionWatchedPollRemove(i)"
+        id="{{ watchedPolls[i].id }}">
+          <div class="ml-5 pl-3 mt-5 text-center wordWrapping">
+            <h2 *ngIf="watchedPollDescription[i] === true" class="pt-1 textPollDescription">{{ watchedPolls[i].description }}</h2>
+          </div>
+          <button class="btn btn-secondary innerButton" (click)="onPollClick()" ><h3 class="textButton">Open</h3></button>
+        </div>
+      </div>
+
+      <div class="col-md-1 scrollAside" (click)="scroll('watched-polls')" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}" style="position: static;">
+        <i *ngIf="!showText" class="fa fa-angle-right"></i>
+        <p *ngIf="showText" class="clickToScroll">
+          Click to Scroll Right
+        </p>
+      </div>
+    </div>
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-center" style="height: 2.34375vw; background-color: rgb(255, 255, 255);">
+      </div>
+    </div>
+
+    <!-- ******************************************************************************************************
+    Viewing your polls
+    ****************************************************************************************************** -->
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-left" style="height: 5.208333333333334vw; background-color: rgb(255, 255, 255);">
+          <h2 class="pl-5 pt-4 mt-3 ml-3">
+            <strong class="text" [ngStyle]="textSize">
+            <i class="fa fa-sticky-note"></i>
+              Your Polls
+            </strong>
+          </h2>
+      </div>
+    </div>
+    <div class="row d-flex text-center noSelect">
+      <div class="voteScroll col-md-11" id="your-polls" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}" dragScroll>
+        <div class="voteItem grow diagonal text-center"
+        (dblclick)="onPollClick()"
+        *ngFor="let yourpoll of yourPolls; let i = index;"
+        (mouseenter)="hoverDescriptionYourPollSet(i)"
+        (mouseleave)="hoverDescriptionYourPollRemove(i)"
+        id="{{ yourPolls[i].id }}">
+          <div class="ml-5 pl-3 mt-5 text-center wordWrapping">
+            <h2 *ngIf="yourPollDescription[i] === true" class="pt-1 textPollDescription">{{ yourPolls[i].description }}</h2>
+          </div>
+          <button class="btn btn-secondary innerButton" (click)="onPollClick()" ><h3 class="textButton">Open</h3></button>
+        </div>
+      </div>
+
+      <div class="col-md-1 scrollAside" (click)="scroll('your-polls')" [ngClass]="clicked ? {'pointerDisabled': true} : {'pointerDisabled': false}"  style="position: static;">
+        <i *ngIf="!showText" class="fa fa-angle-right"></i>
+        <p *ngIf="showText" class="clickToScroll">
+          Click to Scroll Right
+        </p>
+      </div>
+    </div>
+
+    <!-- ******************************************************************************************************
+    Structural elements specific to home page
+    ****************************************************************************************************** -->
+
+    <div class="row d-flex text-center">
+      <div class="col-md-12 text-center" style="height: 2.34375vw; background-color: rgb(255, 255, 255);">
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex text-center">
+    <div class="col-md-12 text-center" style="height: 50px; background-color: rgb(230, 230, 230);">
+    </div>
+  </div>
+
+  <div class="row d-flex text-center">
+    <div class="col-md-12 text-left" style="height: 150px; background-color: rgb(20, 20, 20);">
+    </div>
+  </div>
+</div>
