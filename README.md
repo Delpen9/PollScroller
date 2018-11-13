@@ -7,12 +7,12 @@ Contained in this Git Repository is the ./src file of my Poll Viewing website us
 
 1. To run the repository, have Angular 6+ installed on your computer. 
 2. Create a generic project: 
-ng new <insert-name>
+$ ng new <insert-name>
 3. Replace the default ./src file with the one contained in this repository. 
 4. Install all of the dependencies required for the project: 
-npm install --save @ng-bootstrap/ng-bootstrap
-npm install --save font-awesome angular-font-awesome
-npm install ngx-drag-scroll --save
-npm install --save ng-sidebar
-npm install hammerjs --save
+$ npm install --save @ng-bootstrap/ng-bootstrap
+$ npm install --save font-awesome angular-font-awesome
+$ npm install ngx-drag-scroll --save
+$ npm install --save ng-sidebar
+$ npm install hammerjs --save
 
