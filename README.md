@@ -7,7 +7,7 @@ Contained in this Git Repository is the ./src file of my Poll Viewing website us
 
 1. To run the repository, have Angular 6+ installed on your computer. 
 2. Create a generic project: <br />
-$ ng new <insert-name> 
+$ ng new projectName <br /> 
 3. Replace the default ./src file with the one contained in this repository. 
 4. Install all of the dependencies required for the project: <br />
 $ npm install --save @ng-bootstrap/ng-bootstrap <br />
